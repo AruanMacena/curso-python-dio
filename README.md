@@ -1,3 +1,19 @@
 # Curso de Python realizado na plataforma DIO
-#### Bootcamp Santander 2025 ( mas realizado em Janeiro de 2026 de maneira assincrona )
+#### **Santander** 2025 - Back-End com Python ( mas realizado em Janeiro de 2026 de maneira assincrona )
+
+![Bootcamp Santander](https://assets.dio.me/Ypa0a_wYeZqQ_cKqtU1uiwbYknySjeGRUmwnQ8gVHqg/f:webp/h:120/q:80/L3RyYWNrcy9iZjZjOWIwYS0wY2FjLTRkMjYtYTIzNy00NWVmODlkZDgwYjIucG5n)
+
+
+Matéria| Data fechamento
+------|:------:
+Princípios de desenvolvimento de aplicação com Python| 10/01/2026
+Operadores e Manipulação de Strings com Python|17/01/2026
+Estrutura de dados e listas com Python|x
+Trabalhando com funções em Python|x
+Orientação a objetos e boas práticas em Python|x
+Trabalhando com pacotes Python|x
+Integração Python com banco de dados|x
+Desenvolvimento Orientado a testes com Python|x
+
+>referências: [DIO](www.dio.com.br)
 
