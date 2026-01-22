@@ -11,6 +11,9 @@ Listas podem conter outras listas (listas aninhadas) - representar tabelas e mat
 Fatiamento- >Podemos extrair um conjunto de valores de uma sequência. Para isso basta passar o indice inicial e/ou final para acessar
 o conjunto. Podemos ainda informar quantas posições o cursor ira pular no acesso
 
+Iterar listas -> a forma mais comum é a partir do comando "FOR"
+
+Compressao de listas: Gera uma nova lista aplicando alguma midificacao nos elementos de uma lista existente
 """
 
 # Criando listas
@@ -57,3 +60,58 @@ print(y)
 """
 
 #Fatiamento
+nome = list("Aruan Macena")
+print(nome[2:])
+print(nome[:3]) # retorna ["A","r"",u"]
+print(nome[6:9]) #printa ["M","a","c"]
+print(nome[0:6:2]) #printa ["A","u","n"]
+print(nome[::]) #retona a lista completas, pois todos os parâmetros estao vazios
+print(nome[::-1]) # espelha a sequencia
+
+#Iterando listas
+
+carros = ["gol","celta", "palio"]
+
+for carro in carros:
+    print(carro)
+
+#usando a funcao ENUMERATE
+
+for indice,carro in enumerate(carros):
+    print(f"indice da lista: {indice} e o objeto é: {carro}")
+
+#Compressão de listas - Filtro versão 1 (ex: quero os valores impares em uma lista e pares em outra)
+numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+pares = []
+impares = []
+
+for numero in numeros:
+    if numero % 2 ==0:
+        pares.append(numero)
+    else:
+        impares.append(numero)
+
+print(pares)
+print(impares)
+
+# Compressão de listas -Filtro versão 2
+numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+pares = [numero for numero in numeros if numero % 2 ==0] # primeira parte-> retorno, segunda parte-> iteracao,  
+print(pares)
+
+##Modificando numeros - Versao 1
+
+numeros = [1,2,3,4,5]
+quadrado = []
+
+for numero in numeros:
+    quadrado.append(numero**2)
+
+print(quadrado)
+
+##Modificando numeros - Versao 2
+
+numeros = [1,2,3,4,5]
+cubo = [numero**3 for numero in numeros]
+
+print(cubo)
