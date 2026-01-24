@@ -51,7 +51,8 @@ print()
 for chave in contatos:
     print(chave,contatos[chave]) # nao é a melhor forma
 print()
-for chave,valor in contatos.items():
+for chave,valor in contatos.items(): #metodo do dicionario
     print(chave,valor)
 
 print()
+print(type(contatos))
