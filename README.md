@@ -8,7 +8,7 @@ Matéria| Data fechamento
 ------|:------:
 Princípios de desenvolvimento de aplicação com Python| 13/01/2026
 Operadores e Manipulação de Strings com Python|19/01/2026
-Estrutura de dados e listas com Python|x
+Estrutura de dados e listas com Python|24/01/2026
 Trabalhando com funções em Python|x
 Orientação a objetos e boas práticas em Python|x
 Trabalhando com pacotes Python|x
