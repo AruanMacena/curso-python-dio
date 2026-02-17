@@ -48,7 +48,9 @@ def criar_conta(contas,usuarios):# em progresso
     
  
 def consultar_usuario(consulta): # em construcao
-    consulta = (usuarios.keys())
+    
+    for chave,valor in sorted(consulta.items()):
+        print(f"cpf: {chave} {valor}")
 
 def endereco_usuario():
     logradouro = (input("Digite o logradouro do usuario")).strip()
