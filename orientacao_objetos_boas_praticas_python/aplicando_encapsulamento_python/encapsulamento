@@ -1,0 +1,19 @@
+Agrupamento de dados e métodos de modo a impedir modificaçoes acidentais de dados
+Restriçoes ao acesso direto aos dados. variaveis só podem ser alteradas por métodos do objeto
+Proteção aos dados
+
+Diagrama de classe:
+
+Nome/Variaveis/métodos
+
+sinal + (método ou variavel publica) Pode ser acessado de fora da classe
+sinal - (método ou variavel privada) Só pode ser acessado pela classe
+
+Em Java e C++, existem palavras reservadas para para definir o acesso aos atributos e métodos
+Em Python, usamos algumas convençoes no nome para definir se a variavel ou método é publico ou privado
+
+Na realidade, em Python, tudo é público, mas utilizamos a convencao de _(nome da variavel ou método) para falar que essa variavel/metodo
+só poderia ser modificada pela propria classe
+
+property() -> atribuitos gerenciados em suas classes (decorador @)
+modificar a implementacao interna sem alterar a API publica da classe

@@ -36,3 +36,4 @@ caminhao = Caminhao("roxo", "abd-0234", 6)
 print(moto)
 print(carro)
 print(caminhao)
+
