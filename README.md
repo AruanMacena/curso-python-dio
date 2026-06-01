@@ -10,7 +10,7 @@ Princípios de desenvolvimento de aplicação com Python| 13/01/2026
 Operadores e Manipulação de Strings com Python|19/01/2026
 Estrutura de dados e listas com Python|24/01/2026
 Trabalhando com funções em Python|19/02/2026
-Orientação a objetos e boas práticas em Python|x
+Orientação a objetos e boas práticas em Python|on work
 Trabalhando com pacotes Python|x
 Integração Python com banco de dados|x
 Desenvolvimento Orientado a testes com Python|x
