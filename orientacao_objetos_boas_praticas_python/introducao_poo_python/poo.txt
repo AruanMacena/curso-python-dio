@@ -1,0 +1,15 @@
+
+Paradigma de programação --> forma de solucionar problemas
+
+Abstração de problemas em objetos do mundo real, facilitando o entendimento do código
+e tornando-o mais modular extensível
+
+Conceitos chave --> Classes e objetos
+
+Classe - Definir as caracteristicas e comportamentos(métodos) dos objetos ( abstrato)
+
+Objetos - São utilizaveis e eles possuem as caracteristicas e comportamentos que foram definidos na classe
+
+__init__ método construtor
+
+__del__ método destrutor

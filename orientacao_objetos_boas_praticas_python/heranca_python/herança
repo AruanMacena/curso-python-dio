@@ -1,0 +1,32 @@
+Capacidade de uma classe filha herdar as caracteristicas e comportamentos da classe pai (base)
+
+1- Representa bem os relacionamentos do mundo relacionamentos
+2- Fornece reutilizacao de códigos. Permite adicionar mais recursos sem modifica-la
+3- Tem natureza transitiva, se a classe B herdar da classe A, todas as subclsses de B herdarão automaticamente da classe A.
+
+Sintaxe da herança
+
+class A:
+    pass
+
+class B(A): # B herda o comportamento (métodos) da classe A
+    pass
+
+
+Herança Simples x herança multipla
+
+Herança multipla
+    Quando uma classe filha herda de varias classes pai
+
+EX:
+
+class A:
+    pass
+
+class B:
+    pass
+
+class C(A, B):
+    pass
+
+MRO = Ordem de resolucao dos métodos
