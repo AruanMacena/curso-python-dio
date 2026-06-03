@@ -1,0 +1,41 @@
+Atributos do objeto
+
+Todos os objetos nascem com io mesmo numero de atributos de classe e de instancia.
+Atributos de instancia sao diferentes para cada objeto (cada objeto tem uma copia)
+Atributos de classe sao compartilhados entre os objetos
+
+--------------------------x----------------------------x------------------------------------
+
+Métodos de classe e métodos estaticos
+
+Métodos de classe estao ligados a classe e nao ao objeto. Eles tem acesso ao estado da 
+classe, pois recebem, um parametro que aponta para a classe e nao para a instancia do objeto
+
+Métodos estaticos nao recebem um primeiro argumento explicito. Ele tambem é um métodos
+vinculado a classe e nao ao objeto da classe. Este método nao pode acessar ou modificar
+ o estado da classe. Ele esta presente em uma classe porque faz sentido que o método 
+ esteja presente na classe
+
+Um método de classe recebe um primeiro parametro que aponta para a classe, enquanto um
+método estático não.
+
+Um método de classe pode acessar ou modificar o estado da classe enquanto um método
+estático não pode acessa-lo ou modifica-lo
+
+Geralmente usamos o método de classe para criar métodos de fábrica (criacao de objetos)
+
+Geralemnte usamos métodos estáticos para criar funçoes utilitárias
+
+-------------------------------x---------------------------x--------------------------------
+Interfaces
+
+Intervaces definem o que uma classe deve fazer e não como. (padrao para fazer algo)
+
+Em Python, utilizamos classes abstratas para criar contratos, elas não podem ser instanciadas
+Java -> Interface (palavra reservada) no Python nao existe palavra reservada
+
+Criar classes abstratas com modulo abc (abstratic base class)
+
+ABC funciona decorando metodos da classe base como abstratos e, em seguida registrando classes 
+concretas como implementacoes da classe abstrata. Um medoto se torna abstrato quando decorado 
+com @abstractmethod
