@@ -188,8 +188,8 @@ def menu():
     return input(textwrap.dedent(menu))
 
 def main():
-    clientes = []
-    contas = []
+    clientes = [] #lista que armazena os objetos clientes (pessoa fisica)
+    contas = [] # lista que armazena os objetos do tipo conta
 
     while True:
         opcao = menu()
@@ -201,7 +201,7 @@ def main():
             sacar(clientes)
 
         elif opcao == "e":
-            exibir_extratos(clientes)
+            exibir_extrato(clientes)
 
         elif opcao == "n":
             numero_conta = len(contas) +1
@@ -223,5 +223,129 @@ def main():
                 """
 
             )
+
+"""Funcoes, onde as interacoes entre objetos ocorrerão"""
+
+def filtrar_cliente(cpf,clientes):
+    clientes_filtrados = []
+    for cliente in clientes:
+        if cliente._cpf == cpf:
+            clientes_filtrados.append(cliente)
+            if clientes_filtrados:
+                return clientes_filtrados[0] if clientes_filtrados else None
+
+def criar_clientes(clientes):
+    cpf = input("Digite o cpf do cliente: ")
+    cliente = filtrar_cliente(cpf,clientes)
+
+    if cliente:
+        print("Ja existe cliente cadastrado com este CPF")
+        return
+    
+    nome = input("Digite o nome do cliente")
+    data_nascimento = input("Informe a data de nascimento (dd-mm-aaaa): ")
+    endereco = input("Informe o endereço : ")
+
+    cliente = Pessoa_Fisica(nome=nome, data_nascimento=data_nascimento, cpf=cpf, endereco=endereco)
+
+    clientes.append(cliente)
+    print("Cliente cadastrado com sucesso")
+
+def criar_conta(numero_conta, clientes, contas):
+    cpf = input("informe o cpf do cliente: ")
+    cliente = filtrar_cliente(cpf,clientes)
+
+    if not cliente:
+        print("Cliente nao encontrado \n Retorno ao menu principal")
+        return
+    
+    conta = Conta_corrente.nova_conta(cliente=cliente,numero=numero_conta)
+    contas.append(conta) #adiciona a conta a lista geral
+    cliente._contas.append(conta) #adiciona a conta ao cliente (cliente acessa o objeto._contas acessa o parametro contas do cliente que é uma lista)
+
+    print("Conta criada com sucesso! \n Voltando ao menu principal")
+
+def listar_contas(contas):
+    for conta in contas:
+        print("+" * 30)
+        print(textwrap.dedent(str(conta)))
+
+def recuperar_conta_cliente(cliente):
+    if not cliente._contas:
+        print("Cliente não possui contas nesta ilustre instituição")
+        return
+
+    print('\n*******Contas disponíveis: *******\n')
+    for i, conta in enumerate(cliente._contas, start=1):
+        print(f"[{i}]  |  {conta}")
+        print("-------------------------")
+
+    numero = int(input("Informe o numero relacionado a conta desejada: "))
+
+    if numero <1 or numero> len(cliente._contas):
+        print("Opcao inválida")
+        return
+    
+    return cliente._contas[numero-1]
+
+def depositar(clientes):
+    cpf = input ("Informe o CPF do cliente: ")
+    cliente = filtrar_cliente(cpf, clientes)
+
+    if not cliente:
+        print("Cliente não encontrado")
+        return
+    
+    valor = float(input("Informe o valor do depósito: "))
+    transacao = Deposito(valor=valor)
+
+    conta = recuperar_conta_cliente(cliente)
+    if not conta:
+        return
+    
+    cliente.realizar_transacao(conta, transacao)
+
+def sacar(clientes):
+    cpf = input("Informe o CPF do cliente: ")
+    cliente = filtrar_cliente(cpf, clientes)
+
+    if not cliente:
+        print("\n Cliente não encontrado! \n")
+        return
+
+    valor = float(input("Informe o valor do saque: "))
+    transacao = Saque(valor)
+
+    conta = recuperar_conta_cliente(cliente)
+    if not conta:
+        return
+
+    cliente.realizar_transacao(conta, transacao)
+
+def exibir_extrato(clientes):
+    cpf = input("Informe o CPF do cliente: ")
+    cliente = filtrar_cliente(cpf, clientes)
+
+    if not cliente:
+        print("\n@@@ Cliente não encontrado! @@@")
+        return
+
+    conta = recuperar_conta_cliente(cliente)
+    if not conta:
+        return
+
+    print("\n================ EXTRATO ================")
+    transacoes = conta.historico._transacoes
+
+    extrato = ""
+    if not transacoes:
+        extrato = "Não foram realizadas movimentações."
+    else:
+        for transacao in transacoes:
+            extrato += f"\n{transacao['Tipo']}:\n\tR$ {transacao['Valor']:.2f}"
+
+    print(extrato)
+    print(f"\nSaldo:\n\tR$ {conta.saldo:.2f}")
+    print("==========================================")
 
 main()
