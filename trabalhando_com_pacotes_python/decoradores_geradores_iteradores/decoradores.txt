@@ -1,0 +1,14 @@
+Decoradores.
+
+Caracteristica: posso passar uma funcao para a outra funcao (funcao é um objeto de primeira classe)
+
+Inner functions
+
+É possivel definir funcoes dentro de outras funcoes. tais funcoes sao chamadas de funcoes internas
+
+Decoradores SIMPLES
+
+Funcoes são como qualquer objeto em python
+
+Açucar sintático
+usar decoradores de maneira mais simples com o símbolo @
